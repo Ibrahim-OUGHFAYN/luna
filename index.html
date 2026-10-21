@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison LUNA - Beauty & Spa | Casablanca</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS CSS (Animations au Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luna: {
+                            terracotta: '#A64B42',
+                            warm: '#8C3F37',
+                            sand: '#F7F2EC',
+                            card: '#FFFFFF',
+                            dark: '#1C1716',
+                            gold: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Italiana', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glow-effect {
+            box-shadow: 0 20px 40px -15px rgba(166, 75, 66, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-luna-sand text-luna-dark font-sans antialiased overflow-x-hidden selection:bg-luna-terracotta selection:text-white">
+
+    <!-- Top Bar Infos -->
+    <div class="bg-luna-dark text-luna-sand text-[11px] py-2.5 px-6 border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-regular fa-clock text-luna-terracotta mr-1.5"></i> Lun - Dim : 10h00 - 20h00</span>
+                <span><i class="fa-solid fa-phone text-luna-terracotta mr-1.5"></i> 06-60-64-30-20</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://instagram.com/maison_luna_beautyspa" target="_blank" class="hover:text-luna-terracotta transition-colors flex items-center space-x-1">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                    <span>@maison_luna_beautyspa</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-luna-sand/90 backdrop-blur-xl border-b border-luna-terracotta/10 transition-all">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo carré (500x500) -->
+                    <img src="logo.png" alt="Maison LUNA" class="w-12 h-12 object-contain">
+
+                <!-- Navigation Desktop -->
+                <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-luna-dark/80">
+                    <a href="#accueil" class="hover:text-luna-terracotta transition-colors">Accueil</a>
+                    <a href="#apropos" class="hover:text-luna-terracotta transition-colors">L'Équipe</a>
+                    <a href="#tarifs" class="hover:text-luna-terracotta transition-colors">Menu Soins</a>
+                    <a href="#rituels" class="hover:text-luna-terracotta transition-colors">Packs</a>
+                    <a href="#galerie" class="hover:text-luna-terracotta transition-colors">Galerie</a>
+                    <a href="#avis" class="hover:text-luna-terracotta transition-colors">Avis Clients</a>
+                </nav>
+
+                <!-- Bouton RDV Header -->
+                <div class="hidden sm:flex items-center">
+                    <a href="#reservation" class="bg-luna-terracotta text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-luna-warm transition-all duration-300 shadow-md hover:shadow-lg">
+                        Prendre RDV
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-btn" class="lg:hidden text-luna-dark text-xl">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-luna-sand border-b border-luna-terracotta/10 px-6 py-4 space-y-3">
+            <a href="#accueil" class="block text-xs font-bold uppercase tracking-wider text-luna-dark">Accueil</a>
+            <a href="#apropos" class="block text-xs font-bold uppercase tracking-wider text-luna-dark">L'Équipe</a>
+            <a href="#tarifs" class="block text-xs font-bold uppercase tracking-wider text-luna-dark">Menu Soins</a>
+            <a href="#rituels" class="block text-xs font-bold uppercase tracking-wider text-luna-dark">Packs</a>
+            <a href="#galerie" class="block text-xs font-bold uppercase tracking-wider text-luna-dark">Galerie</a>
+            <a href="#reservation" class="inline-block bg-luna-terracotta text-white px-5 py-2 rounded-full text-xs font-bold uppercase">Prendre RDV</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative py-20 lg:py-28 px-6 lg:px-12 max-w-7xl mx-auto min-h-[85vh] flex items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+            
+            <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
+                <span class="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-md text-luna-terracotta px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase border border-luna-terracotta/20 shadow-sm">
+                    <i class="fa-solid fa-sparkles text-xs"></i>
+                    <span>Coiffure • Spa • Hammam • Onglerie</span>
+                </span>
+                
+                <h1 class="font-serif text-5xl sm:text-7xl text-luna-dark leading-[1.05] font-normal">
+                    L'Art de sublimer votre <span class="italic font-normal text-luna-terracotta">beauté naturelle.</span>
+                </h1>
+                
+                <p class="text-sm sm:text-base text-gray-600 font-light max-w-xl leading-relaxed">
+                    Maison LUNA est un espace dédié au bien-être et à la détente. Profitez de nos soins capillaires d'exception, de nos rituels de hammam traditionnel et de notre service d'onglerie.
+                </p>
+                
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="#reservation" class="bg-luna-dark text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-luna-terracotta transition-all shadow-lg hover:shadow-xl">
+                        Prendre Rendez-vous
+                    </a>
+                    <a href="#tarifs" class="bg-white text-luna-dark border border-luna-terracotta/20 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-luna-sand transition-all shadow-sm">
+                        Découvrir les Tarifs
+                    </a>
+                </div>
+
+                <!-- Confiance / Instagram -->
+                <div class="pt-8 border-t border-luna-terracotta/10 flex items-center space-x-6">
+                    <div>
+                        <p class="font-serif text-2xl font-bold text-luna-dark">31.2K+</p>
+                        <p class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Abonnées Instagram</p>
+                    </div>
+                    <div class="h-8 w-px bg-luna-terracotta/20"></div>
+                    <div>
+                        <p class="font-serif text-2xl font-bold text-luna-dark">100%</p>
+                        <p class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Qualité & Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative" data-aos="fade-left">
+                <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white group">
+                    <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=800" alt="Maison LUNA Salon" class="w-full h-[520px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section À Propos & Engagements -->
+    <section id="apropos" class="py-24 bg-white border-y border-luna-terracotta/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-luna-terracotta uppercase tracking-widest">Savoir-faire & Passion</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-luna-dark mt-2">Pourquoi Choisir Maison LUNA ?</h2>
+                <div class="w-16 h-0.5 bg-luna-terracotta mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-luna-sand p-8 rounded-3xl border border-luna-terracotta/10 text-center space-y-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-2xl bg-white text-luna-terracotta text-2xl flex items-center justify-center mx-auto shadow-sm">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luna-dark">Rituels Authentiques</h3>
+                    <p class="text-xs text-gray-600 font-light leading-relaxed">Nos soins de hammam et de spa associent traditions marocaines et produits naturels haut de gamme.</p>
+                </div>
+
+                <div class="bg-luna-sand p-8 rounded-3xl border border-luna-terracotta/10 text-center space-y-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-2xl bg-white text-luna-terracotta text-2xl flex items-center justify-center mx-auto shadow-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luna-dark">Expertise Capillaire</h3>
+                    <p class="text-xs text-gray-600 font-light leading-relaxed">Spécialistes des lissages protéine, traitements Olaplex, colorations et coiffages sur-mesure.</p>
+                </div>
+
+                <div class="bg-luna-sand p-8 rounded-3xl border border-luna-terracotta/10 text-center space-y-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 rounded-2xl bg-white text-luna-terracotta text-2xl flex items-center justify-center mx-auto shadow-sm">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luna-dark">Onglerie & Beauté</h3>
+                    <p class="text-xs text-gray-600 font-light leading-relaxed">Service complet d'onglerie (BIAB, capsules, gel) et soins visage Hydrafacial pour un résultat éclatant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Carte des Tarifs (Tabs Interactifs) -->
+    <section id="tarifs" class="py-24 bg-luna-sand">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16" data-aos="fade-up">
+                <div>
+                    <span class="text-xs font-bold text-luna-terracotta uppercase tracking-widest">Price List Officiel</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-luna-dark mt-2">Carte des Prestations</h2>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="tabs">
+                    <button onclick="switchTab('all')" class="tab-btn active bg-luna-terracotta text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-sm">Tous</button>
+                    <button onclick="switchTab('coiffure')" class="tab-btn bg-white text-luna-dark px-5 py-2.5 rounded-full text-xs font-bold hover:bg-luna-terracotta/10">Coiffure</button>
+                    <button onclick="switchTab('onglerie')" class="tab-btn bg-white text-luna-dark px-5 py-2.5 rounded-full text-xs font-bold hover:bg-luna-terracotta/10">Onglerie</button>
+                    <button onclick="switchTab('soins')" class="tab-btn bg-white text-luna-dark px-5 py-2.5 rounded-full text-xs font-bold hover:bg-luna-terracotta/10">Soins Visage</button>
+                    <button onclick="switchTab('epilation')" class="tab-btn bg-white text-luna-dark px-5 py-2.5 rounded-full text-xs font-bold hover:bg-luna-terracotta/10">Épilation</button>
+                </div>
+            </div>
+
+            <!-- Grille des Tarifs -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="menu-items">
+
+                <!-- COIFFURE -->
+                <div class="service-card coiffure bg-white p-6 rounded-2xl border border-luna-terracotta/10 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-serif text-xl font-bold text-luna-dark">Brushing</h3>
+                        <span class="text-xs font-bold text-luna-terracotta bg-luna-sand px-3 py-1 rounded-full">dès 80 DHS</span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-light">Coiffage professionnel personnalisé.</p>
+                </div>
+
+                <div class="service-card coiffure bg-white p-6 rounded-2xl border border-luna-terracotta/10 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-serif text-xl font-bold text-luna-dark">Coupe + Brushing</h3>
+                        <span class="text-xs font-bold text-luna-terracotta bg-luna-sand px-3 py-1 rounded-full">350 DHS</span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-light">Rafraîchissement de la coupe et coiffage.</p>
+                </div>
+
+                <div class="service-card coiffure bg-white p-6 rounded-2xl border border-luna-terracotta/10 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-serif text-xl font-bold text-luna-dark">Lissage Protéine / Goldery</h3>
+                        <span class="text-xs font-bold text-luna-terracotta bg-luna-sand px-3 py-1 rounded-full">1000 - 1500 DHS</span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-light">Soin lissant et réparateur profond.</p>
+                </div>
+
+                <!-- ONGLERIE -->
+                <div class="service-card onglerie bg-white p-6 rounded-2xl border border-luna-terracotta/10 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-serif text-xl font-bold text-luna-dark">Manucure Permanente</h3>
+                        <span class="text-xs font-bold text-luna-terracotta bg-luna-sand px-3 py-1 rounded-full">180 DHS</span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-light">Pose de vernis permanent longue durée.</p>
+                </div>
+
+                <div class="service-card onglerie bg-white p-6 rounded-2xl border border-luna-terracotta/10 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-serif text-xl font-bold text-luna-dark">Gel Chablon / Capsule</h3>
+                        <span class="text-xs font-bold text-luna-terracotta bg-luna-sand px-3 py-1 rounded-full">400 - 600 DHS</span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-light">Extension d'ongles sur-mesure.</p>
+                </div>
+
+                <!-- SOINS VISAGE -->
+                <div class="service-card soins bg-white p-6 rounded-2xl border border-luna-terracotta/10 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-serif text-xl font-bold text-luna-dark">Hydrafacial Profond</h3>
+                        <span class="text-xs font-bold text-luna-terracotta bg-luna-sand px-3 py-1 rounded-full">600 DHS</span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-light">Nettoyage, exfoliation et hydratation intense.</p>
+                </div>
+
+                <div class="service-card soins bg-white p-6 rounded-2xl border border-luna-terracotta/10 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-serif text-xl font-bold text-luna-dark">Soin Olaplex Cheveux</h3>
+                        <span class="text-xs font-bold text-luna-terracotta bg-luna-sand px-3 py-1 rounded-full">300 DHS</span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-light">Traitement réparateur de la fibre capillaire.</p>
+                </div>
+
+                <!-- EPILATION -->
+                <div class="service-card epilation bg-white p-6 rounded-2xl border border-luna-terracotta/10 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-serif text-xl font-bold text-luna-dark">Épilation Complète</h3>
+                        <span class="text-xs font-bold text-luna-terracotta bg-luna-sand px-3 py-1 rounded-full">300 DHS</span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-light">Jambes, maillot, aisselles et bras.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Packs Rituels Section -->
+    <section id="rituels" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="text-center max-w-xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-luna-terracotta uppercase tracking-widest">Offres Exclusives</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-luna-dark mt-2">Nos Packs Rituels</h2>
+                <div class="w-16 h-0.5 bg-luna-terracotta mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Pack Relaxant -->
+                <div class="bg-luna-sand p-8 rounded-3xl border-2 border-luna-terracotta shadow-lg relative flex flex-col justify-between" data-aos="fade-right">
+                    <div>
+                        <span class="bg-luna-terracotta text-white font-bold text-[10px] uppercase px-4 py-1.5 rounded-full">Populaire</span>
+                        <h3 class="font-serif text-3xl text-luna-dark font-bold mt-4 mb-2">Pack Relaxant</h3>
+                        <ul class="text-xs text-gray-600 space-y-3 font-medium my-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-luna-terracotta mr-2"></i> Hammam Royal aux plantes</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-luna-terracotta mr-2"></i> Massage relaxant de 30 min</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-luna-terracotta mr-2"></i> Brushing de finition</li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-between items-center pt-6 border-t border-luna-terracotta/20">
+                        <span class="font-serif text-3xl font-bold text-luna-terracotta">400 DHS</span>
+                        <a href="#reservation" class="bg-luna-dark text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-luna-terracotta transition-all">Réserver</a>
+                    </div>
+                </div>
+
+                <!-- Pack Éclat -->
+                <div class="bg-luna-sand p-8 rounded-3xl border-2 border-luna-terracotta shadow-lg relative flex flex-col justify-between" data-aos="fade-left">
+                    <div>
+                        <span class="bg-luna-gold text-white font-bold text-[10px] uppercase px-4 py-1.5 rounded-full">Incontournable</span>
+                        <h3 class="font-serif text-3xl text-luna-dark font-bold mt-4 mb-2">Pack Éclat</h3>
+                        <ul class="text-xs text-gray-600 space-y-3 font-medium my-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-luna-terracotta mr-2"></i> Hammam Traditionnel</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-luna-terracotta mr-2"></i> Soin Visage Lumière</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-luna-terracotta mr-2"></i> Manucure & Pédicure Spa</li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-between items-center pt-6 border-t border-luna-terracotta/20">
+                        <span class="font-serif text-3xl font-bold text-luna-terracotta">600 DHS</span>
+                        <a href="#reservation" class="bg-luna-dark text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-luna-terracotta transition-all">Réserver</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Galerie Instagram / Photos -->
+    <section id="galerie" class="py-24 bg-luna-sand">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-luna-terracotta uppercase tracking-widest">Aperçu Visuel</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-luna-dark mt-2">Galerie du Salon</h2>
+                <div class="w-16 h-0.5 bg-luna-terracotta mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="relative overflow-hidden rounded-3xl shadow-md group h-72" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600" alt="Coiffure" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="relative overflow-hidden rounded-3xl shadow-md group h-72" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600" alt="Onglerie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="relative overflow-hidden rounded-3xl shadow-md group h-72" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=600" alt="Massage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="relative overflow-hidden rounded-3xl shadow-md group h-72" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1512290900673-7002fa209673?q=80&w=600" alt="Soin Visage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Avis Clients -->
+    <section id="avis" class="py-24 bg-white border-t border-luna-terracotta/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-luna-terracotta uppercase tracking-widest">Temoignages</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-luna-dark mt-2">Ce que disent nos clientes</h2>
+                <div class="w-16 h-0.5 bg-luna-terracotta mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-luna-sand p-8 rounded-3xl border border-luna-terracotta/10 space-y-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex text-luna-gold text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 font-light leading-relaxed">"Un accueil tellement chaleureux ! Mon lissage protéine est juste parfait, mes cheveux sont doux et très brillants. Merci Maison LUNA !"</p>
+                    <p class="text-xs font-bold text-luna-dark uppercase tracking-wider">— Salma K.</p>
+                </div>
+
+                <div class="bg-luna-sand p-8 rounded-3xl border border-luna-terracotta/10 space-y-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex text-luna-gold text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 font-light leading-relaxed">"Le Pack Relaxant est un pur bonheur. Le hammam traditionnel suivi du massage m'a complètement détendue. Je reviendrai très vite !"</p>
+                    <p class="text-xs font-bold text-luna-dark uppercase tracking-wider">— Meryem T.</p>
+                </div>
+
+                <div class="bg-luna-sand p-8 rounded-3xl border border-luna-terracotta/10 space-y-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex text-luna-gold text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 font-light leading-relaxed">"Propreté impeccable, personnel aux petits soins et une pose d'ongles en gel magnifique. C'est de loin mon salon préféré à Casablanca."</p>
+                    <p class="text-xs font-bold text-luna-dark uppercase tracking-wider">— Kenza B.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Réservation Directe WhatsApp -->
+    <section id="reservation" class="py-24 bg-luna-dark text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="text-luna-terracotta text-xs font-bold uppercase tracking-widest">Prise de RDV Rapide</span>
+                <h2 class="font-serif text-4xl sm:text-5xl mt-2">Réservez votre Instant Beauté</h2>
+                <p class="text-gray-400 text-xs mt-3 font-light">Remplissez les informations ci-dessous pour nous envoyer votre demande directe sur WhatsApp.</p>
+            </div>
+
+            <form id="booking-form" class="bg-white text-luna-dark p-8 sm:p-12 rounded-3xl shadow-2xl space-y-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-luna-terracotta mb-2">Nom & Prénom</label>
+                        <input type="text" id="name" required placeholder="Ex: Meryem Alaoui" class="w-full px-4 py-3.5 rounded-xl bg-luna-sand border border-luna-terracotta/20 focus:outline-none focus:border-luna-terracotta text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-luna-terracotta mb-2">Téléphone</label>
+                        <input type="tel" id="phone" required placeholder="06 XX XX XX XX" class="w-full px-4 py-3.5 rounded-xl bg-luna-sand border border-luna-terracotta/20 focus:outline-none focus:border-luna-terracotta text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-luna-terracotta mb-2">Prestation Souhaitée</label>
+                        <select id="service" required class="w-full px-4 py-3.5 rounded-xl bg-luna-sand border border-luna-terracotta/20 focus:outline-none focus:border-luna-terracotta text-sm">
+                            <option value="">Sélectionnez un soin</option>
+                            <option value="Pack Relaxant (400 DHS)">Pack Relaxant (400 DHS)</option>
+                            <option value="Pack Éclat (600 DHS)">Pack Éclat (600 DHS)</option>
+                            <option value="Brushing (dès 80 DHS)">Brushing</option>
+                            <option value="Lissage Protéine / Goldery">Lissage Protéine / Goldery</option>
+                            <option value="Manucure Permanente (180 DHS)">Manucure Permanente (180 DHS)</option>
+                            <option value="Soin Visage Hydrafacial (600 DHS)">Hydrafacial Profond (600 DHS)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-luna-terracotta mb-2">Date & Heure</label>
+                        <input type="datetime-local" id="datetime" required class="w-full px-4 py-3.5 rounded-xl bg-luna-sand border border-luna-terracotta/20 focus:outline-none focus:border-luna-terracotta text-sm">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center space-x-3 text-xs uppercase tracking-widest">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Envoyer la demande sur WhatsApp</span>
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black text-white py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+                <div class="flex items-center justify-center md:justify-start space-x-3 mb-4">
+                    <img src="logo.png" alt="Maison LUNA" class="w-12 h-12 object-contain rounded-xl border border-white/20">
+                    <span class="font-serif text-2xl font-bold tracking-tight">MAISON LUNA</span>
+                </div>
+                <p class="text-xs text-gray-400 font-light leading-relaxed">
+                    Coiffure • Spa • Hammam • Onglerie • Massage.<br>Votre sanctuaire de sérénité et de beauté.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-lg font-bold mb-4 text-luna-terracotta">Horaires d'Ouverture</h4>
+                <p class="text-xs text-gray-300 font-light">Du lundi au dimanche : <span class="text-emerald-400 font-medium">10h00 - 20h00</span></p>
+                <p class="text-xs text-gray-400 mt-2 font-light">Ouvert 7 jours sur 7 sur rendez-vous.</p>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-lg font-bold mb-4 text-luna-terracotta">Contact Direct</h4>
+                <p class="text-xs text-gray-300 mb-2 font-light"><i class="fa-solid fa-phone text-luna-terracotta mr-2"></i> 06-60-64-30-20</p>
+                <a href="https://instagram.com/maison_luna_beautyspa" target="_blank" class="text-xs text-luna-terracotta hover:underline inline-flex items-center space-x-2">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                    <span>@maison_luna_beautyspa</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-8 mt-12 border-t border-white/10 text-center text-[10px] text-gray-500">
+            <p>&copy; 2026 Maison LUNA Beauty & Spa. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- AOS JS for Scroll Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        function switchTab(category) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            const items = document.querySelectorAll('.service-card');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-luna-terracotta', 'text-white');
+                btn.classList.add('bg-white', 'text-luna-dark');
+            });
+
+            event.target.classList.add('bg-luna-terracotta', 'text-white');
+            event.target.classList.remove('bg-white', 'text-luna-dark');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const datetime = document.getElementById('datetime').value;
+
+            const message = `Bonjour Maison LUNA, je souhaite effectuer une réservation :\n\n- Nom : ${name}\n- Téléphone : ${phone}\n- Soin : ${service}\n- Date/Heure : ${datetime}`;
+            
+            window.open(`https://wa.me/212660643020?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        document.getElementById('mobile-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
